@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Candidate Registration - Dream Choice HR</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;background:#f7fbff;color:#111;padding:20px}
+    .container{max-width:900px;margin:auto;background:#fff;padding:18px;border-radius:8px;box-shadow:0 6px 18px rgba(10,30,60,0.06)}
+    h1{color:#064a8a}
+    .actions{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;color:#fff;background:#0b63c5;font-weight:700}
+    .whatsapp{background:#25D366}
+    .email{background:#4a90e2}
+    iframe{width:100%;min-height:600px;border:0;border-radius:6px}
+    small{color:#666}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Candidate Registration</h1>
+    <p>Upload your resume (PDF / DOC / DOCX) and fill basic details. Responses are saved to our OneDrive and Excel automatically.</p>
+
+    <!-- Replace the iframe below with the Embed code from Microsoft Forms -->
+    <!-- Example: <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?..." ...></iframe> -->
+    <div id="msform">
+      <!-- paste your Microsoft Forms iframe here -->
+      YOUR_IFRAME_CODE_HERE
+    </div>
+
+    <div class="actions">
+      <!-- WhatsApp quick contact (opens chat with prefilled text) -->
+      <a class="btn whatsapp" href="https://wa.me/919652864229?text=Hello%20Dream%20Choice%20HR%20-%20I%20want%20to%20apply%20for%20a%20job.%20My%20name%20is%20%5BYour%20Name%5D." target="_blank" rel="noopener">Contact via WhatsApp</a>
+
+      <!-- Mailto fallback -->
+      <a class="btn email" href="mailto:arshad001syed@gmail.com?subject=Job%20Application&body=Hello%20Dream%20Choice%2C%0A%0AMy%20name%20is%20%5BYour%20Name%5D.%20I%20would%20like%20to%20apply%20for%20the%20position%20of%20%5BJob%20Title%5D.%0A%0APhone%3A%20%2B91%209652864229%0A%0APlease%20find%20my%20resume%20attached%20(to%20this%20email).">Email Us</a>
+    </div>
+
+    <p style="margin-top:12px"><small>If you prefer, send your CV as a file to WhatsApp +91 96528 64229 or directly email <strong>arshad001syed@gmail.com</strong>.</small></p>
+  </div>
+</body>
+</html>
