@@ -42,10 +42,10 @@
   </ul>
 </section>
 
-<section id="contact">
+<section id="9652864229">
   <h2>Contact Us</h2>
   <p><strong>Office Address:</strong> Himayatnagar, Hyderabad, Telangana, India</p>
-  <p><strong>Email:</strong> info@dreamchoicehr.com</p>
+  <p><strong>Email:</arshad001syed@gmail.com> info@dreamchoicehr.com</p>
   <p><strong>Phone:</strong> +91 85005 77866</p>
   <a class="btn" href="mailto:info@dreamchoicehr.com">Send Email</a>
 </section>
