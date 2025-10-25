@@ -1,0 +1,11 @@
+<!-- Formspree HTML snippet. Replace YOUR_FORM_ID with the one Formspree gives you.
+     This sends form submissions to Formspree which then emails to the configured address. -->
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+  <label>Name <input type="text" name="name" required></label>
+  <label>Email <input type="email" name="email" required></label>
+  <label>Phone <input type="tel" name="phone" required></label>
+  <!-- Honeypot -->
+  <input type="text" name="website" style="display:none" autocomplete="off">
+  <label>Message <textarea name="message"></textarea></label>
+  <button type="submit">Send</button>
+</form>
