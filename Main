@@ -1,0 +1,158 @@
+<!-- Dream Choice HR Consultancy Pvt. Ltd. | Full Responsive Website with AI Chatbot -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dream Choice HR Consultancy Pvt. Ltd.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-text { background: linear-gradient(90deg, #7e22ce, #2563eb); -webkit-background-clip: text; color: transparent; }
+  </style>
+</head>
+<body class="bg-gray-900 text-white">
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center px-6 py-4 bg-gray-800 bg-opacity-70 backdrop-blur-md sticky top-0 z-50">
+    <h1 class="text-2xl font-bold gradient-text">Dream Choice HR</h1>
+    <ul class="hidden md:flex space-x-6">
+      <li><a href="#home" class="hover:text-blue-400">Home</a></li>
+      <li><a href="#about" class="hover:text-blue-400">About</a></li>
+      <li><a href="#services" class="hover:text-blue-400">Services</a></li>
+      <li><a href="#clients" class="hover:text-blue-400">Clients</a></li>
+      <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="flex flex-col items-center justify-center text-center min-h-[80vh] px-6">
+    <h1 class="text-5xl md:text-7xl font-bold gradient-text mb-4">Global Recruitment & Visa Experts</h1>
+    <p class="text-gray-300 text-lg max-w-3xl mb-6">Connecting Indian professionals to opportunities in <span class="text-blue-400">UAE, Singapore, KSA, Oman, Malta, Portugal, Europe, Middle East, Russia</span> and beyond.</p>
+    <a href="#contact" class="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-lg hover:scale-105 transition-all">Get Started</a>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 bg-gray-800 bg-opacity-60">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-6 gradient-text">About Us</h2>
+      <p class="text-gray-300 leading-relaxed">Dream Choice HR Consultancy Pvt. Ltd. is a Hyderabad-based overseas recruitment and HR management agency. We are licensed professionals specializing in work, business, and investor visas. With trusted global connections and direct tie-ups, we provide transparent and efficient services to our clients.</p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-16">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-10 gradient-text">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all">
+          <svg class="w-12 h-12 mx-auto text-blue-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6"/></svg>
+          <h3 class="text-xl font-semibold mb-3">Overseas Employment</h3>
+          <p class="text-gray-400">We assist skilled professionals in securing high-salary employment opportunities across multiple countries.</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all">
+          <svg class="w-12 h-12 mx-auto text-purple-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 1.105-.895 2-2 2s-2-.895-2-2"/></svg>
+          <h3 class="text-xl font-semibold mb-3">Business & Investor Visas</h3>
+          <p class="text-gray-400">Support for entrepreneurs and investors looking to establish or expand their business overseas.</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all">
+          <svg class="w-12 h-12 mx-auto text-pink-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18"/></svg>
+          <h3 class="text-xl font-semibold mb-3">Education & Migration</h3>
+          <p class="text-gray-400">Guidance for students and migrants to ensure legal, transparent, and compliant visa pathways.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients -->
+  <section id="clients" class="py-16 bg-gray-800 bg-opacity-60">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-10 gradient-text">Our Global Clients</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gray-700 p-6 rounded-lg">
+          <p class="text-gray-300 mb-3">“I got my UAE employment visa in 2 weeks. Very professional team!”</p>
+          <p class="text-blue-400 font-semibold">Rajesh Kumar — UAE</p>
+        </div>
+        <div class="bg-gray-700 p-6 rounded-lg">
+          <p class="text-gray-300 mb-3">“Excellent consultancy for Portugal Golden Visa. Transparent process!”</p>
+          <p class="text-blue-400 font-semibold">Ali Khan — Portugal</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-6 gradient-text">Contact Us</h2>
+      <p class="text-gray-300 mb-8">Reach us for visa, recruitment, or global consulting services.</p>
+      <div class="grid md:grid-cols-2 gap-8 text-left">
+        <div class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-2xl font-semibold mb-4">Head Office</h3>
+          <p class="text-gray-400">📍 Hyderabad, Telangana</p>
+          <p class="text-gray-400">📞 WhatsApp: +91 9652864229</p>
+          <p class="text-gray-400">📧 Email: arshad001syed@gmail.com</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-2xl font-semibold mb-4">Send a Message</h3>
+          <form class="space-y-4">
+            <input type="text" placeholder="Your Name" class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500">
+            <input type="email" placeholder="Your Email" class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500">
+            <textarea rows="4" placeholder="Your Message" class="w-full p-2 rounded bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500"></textarea>
+            <button type="submit" class="w-full py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg hover:opacity-90">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 bg-gray-800 border-t border-gray-700">
+    <p class="text-gray-400">&copy; 2025 Dream Choice HR Consultancy Pvt. Ltd. | All Rights Reserved.</p>
+  </footer>
+
+  <!-- AI Chatbot -->
+  <script>
+    feather.replace();
+
+    const botContainer = document.createElement('div');
+    botContainer.innerHTML = `
+      <div id="chatbot" class="fixed bottom-6 right-6 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full p-4 shadow-xl cursor-pointer" title="Ask DreamChoice AI">
+        <i data-feather="message-circle" class="w-6 h-6 text-white"></i>
+      </div>
+      <div id="chat-box" class="hidden fixed bottom-20 right-6 bg-gray-800 rounded-lg shadow-2xl w-80 p-4">
+        <div class="flex justify-between mb-2">
+          <h3 class="text-white font-semibold">DreamChoice AI Assistant</h3>
+          <button id="close-chat" class="text-gray-400 hover:text-white">✖</button>
+        </div>
+        <div id="chat-content" class="h-48 overflow-y-auto text-gray-300 text-sm mb-3 border border-gray-700 rounded p-2"></div>
+        <input id="chat-input" type="text" placeholder="Ask something..." class="w-full bg-gray-700 border border-gray-600 rounded p-2 text-white">
+      </div>
+    `;
+    document.body.appendChild(botContainer);
+
+    feather.replace();
+
+    const chatBtn = document.getElementById('chatbot');
+    const chatBox = document.getElementById('chat-box');
+    const closeChat = document.getElementById('close-chat');
+    const chatInput = document.getElementById('chat-input');
+    const chatContent = document.getElementById('chat-content');
+
+    chatBtn.onclick = () => chatBox.classList.toggle('hidden');
+    closeChat.onclick = () => chatBox.classList.add('hidden');
+
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' && chatInput.value.trim() !== '') {
+        const userMsg = chatInput.value.trim();
+        chatContent.innerHTML += `<p class='text-blue-400'>You: ${userMsg}</p>`;
+        chatInput.value = '';
+        setTimeout(() => {
+          chatContent.innerHTML += `<p class='text-gray-300'>AI: Thank you for reaching Dream Choice HR! Our team will contact you soon.</p>`;
+          chatContent.scrollTop = chatContent.scrollHeight;
+        }, 600);
+      }
+    });
+  </script>
+</body>
+</html>
