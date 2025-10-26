@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronomy Picture of the Day | Cosmic Quasar Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <custom-navbar></custom-navbar>
+
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+            Astronomy Picture of the Day
+        </h1>
+        
+        <div class="max-w-4xl mx-auto bg-gray-800 rounded-xl overflow-hidden shadow-2xl">
+            <div id="apod-container" class="p-6">
+                <div class="flex justify-center items-center h-64 bg-gray-700 rounded-lg animate-pulse">
+                    <i data-feather="loader" class="animate-spin w-16 h-16 text-purple-500"></i>
+                </div>
+            </div>
+            
+            <div class="p-6 border-t border-gray-700">
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <button id="random-apod" class="px-6 py-2 bg-purple-600 hover:bg-purple-700 rounded-full transition-all duration-300 flex items-center gap-2">
+                        <i data-feather="shuffle"></i> Random Date
+                    </button>
+                    <input type="date" id="date-picker" class="bg-gray-700 border border-gray-600 rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        
+        // NASA APOD API integration
+        document.addEventListener('DOMContentLoaded', () => {
+            const apodContainer = document.getElementById('apod-container');
+            const randomBtn = document.getElementById('random-apod');
+            const datePicker = document.getElementById('date-picker');
+            
+            // Set max date to today
+            datePicker.max = new Date().toISOString().split('T')[0];
+            
+            // Fetch APOD for today by default
+            fetchAPOD();
+            
+            // Fetch APOD for selected date
+            datePicker.addEventListener('change', (e) => {
+                fetchAPOD(e.target.value);
+            });
+            
+            // Fetch random APOD
+            randomBtn.addEventListener('click', () => {
+                const randomDate = getRandomDate(new Date(1995, 5, 16), new Date());
+                datePicker.value = randomDate.toISOString().split('T')[0];
+                fetchAPOD(randomDate.toISOString().split('T')[0]);
+            });
+            
+            function fetchAPOD(date = '') {
+                apodContainer.innerHTML = `
+                    <div class="flex justify-center items-center h-64 bg-gray-700 rounded-lg animate-pulse">
+                        <i data-feather="loader" class="animate-spin w-16 h-16 text-purple-500"></i>
+                    </div>
+                `;
+                feather.replace();
+                
+                const apiUrl = date 
+                    ? `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${date}`
+                    : `https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`;
+                
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.media_type === 'image') {
+                            apodContainer.innerHTML = `
+                                <div class="space-y-6">
+                                    <h2 class="text-2xl font-bold">${data.title}</h2>
+                                    <p class="text-gray-300">${formatDate(data.date)}</p>
+                                    <img src="${data.url}" alt="${data.title}" class="w-full max-h-[70vh] object-contain rounded-lg shadow-lg">
+                                    <p class="text-gray-300">${data.explanation}</p>
+                                    ${data.copyright ? `<p class="text-sm text-gray-400">Copyright: ${data.copyright}</p>` : ''}
+                                </div>
+                            `;
+                        } else if (data.media_type === 'video') {
+                            apodContainer.innerHTML = `
+                                <div class="space-y-6">
+                                    <h2 class="text-2xl font-bold">${data.title}</h2>
+                                    <p class="text-gray-300">${formatDate(data.date)}</p>
+                                    <div class="aspect-w-16 aspect-h-9">
+                                        <iframe src="${data.url}" class="w-full h-[60vh] rounded-lg shadow-lg" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                    <p class="text-gray-300">${data.explanation}</p>
+                                    ${data.copyright ? `<p class="text-sm text-gray-400">Copyright: ${data.copyright}</p>` : ''}
+                                </div>
+                            `;
+                        }
+                        feather.replace();
+                    })
+                    .catch(error => {
+                        apodContainer.innerHTML = `
+                            <div class="text-center p-8 bg-red-900 bg-opacity-20 rounded-lg">
+                                <i data-feather="alert-circle" class="w-12 h-12 mx-auto text-red-500"></i>
+                                <p class="mt-4 text-red-400">Failed to load Astronomy Picture of the Day. Please try again later.</p>
+                            </div>
+                        `;
+                        feather.replace();
+                        console.error('Error fetching APOD:', error);
+                    });
+            }
+            
+            function getRandomDate(start, end) {
+                return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+            }
+        });
+    </script>
+</body>
+</html>
