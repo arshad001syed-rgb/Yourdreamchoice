@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Quasar Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <custom-navbar></custom-navbar>
+
+    <main class="flex-grow" id="vanta-bg">
+        <div class="container mx-auto px-4 py-16 flex flex-col items-center justify-center min-h-[80vh]">
+            <div class="max-w-4xl text-center bg-gray-800 bg-opacity-70 p-8 rounded-xl backdrop-blur-sm">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+                    Cosmic Quasar Explorer
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-300">
+                    Discover the wonders of the universe with real-time space data
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="apod.html" class="px-8 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 transition-all duration-300 text-lg font-medium shadow-lg hover:shadow-xl">
+                        Astronomy Picture
+                    </a>
+                    <a href="iss.html" class="px-8 py-3 rounded-full bg-gradient-to-r from-pink-600 to-red-500 hover:from-pink-700 hover:to-red-600 transition-all duration-300 text-lg font-medium shadow-lg hover:shadow-xl">
+                        ISS Tracker
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        VANTA.GLOBE({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x3f51b5,
+            backgroundColor: 0x111827,
+            size: 0.7
+        })
+    </script>
+<script src="https://huggingface.co/deepsite/deepsite-badge.js"></script>
+</body>
+</html>
