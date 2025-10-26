@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Cosmic Quasar Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <custom-navbar></custom-navbar>
+
+    <main class="flex-grow container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+                About Cosmic Quasar Explorer
+            </h1>
+            
+            <div class="space-y-12">
+                <section class="bg-gray-800 rounded-xl p-8 shadow-2xl">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                        <i data-feather="compass"></i> Our Mission
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        Cosmic Quasar Explorer is dedicated to bringing the wonders of space exploration to everyone. 
+                        Our platform uses real-time data from NASA and other space agencies to provide interactive 
+                        experiences that make learning about our universe engaging and accessible.
+                    </p>
+                </section>
+                
+                <section class="bg-gray-800 rounded-xl p-8 shadow-2xl">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                        <i data-feather="code"></i> Technologies Used
+                    </h2>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="bg-gray-700 p-4 rounded-lg flex items-center gap-3">
+                            <i data-feather="globe" class="text-purple-400"></i>
+                            <span>NASA API</span>
+                        </div>
+                        <div class="bg-gray-700 p-4 rounded-lg flex items-center gap-3">
+                            <i data-feather="map" class="text-blue-400"></i>
+                            <span>Leaflet.js</span>
+                        </div>
+                        <div class="bg-gray-700 p-4 rounded-lg flex items-center gap-3">
+                            <i data-feather="layers" class="text-green-400"></i>
+                            <span>Vanta.js</span>
+                        </div>
+                        <div class="bg-gray-700 p-4 rounded-lg flex items-center gap-3">
+                            <i data-feather="wind" class="text-yellow-400"></i>
+                            <span>Tailwind CSS</span>
+                        </div>
+                        <div class="bg-gray-700 p-4 rounded-lg flex items-center gap-3">
+                            <i data-feather="feather" class="text-pink-400"></i>
+                            <span>Feather Icons</span>
+                        </div>
+                        <div class="bg-gray-700 p-4 rounded-lg flex items-center gap-3">
+                            <i data-feather="box" class="text-red-400"></i>
+                            <span>Web Components</span>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="bg-gray-800 rounded-xl p-8 shadow-2xl">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                        <i data-feather="users"></i> The Team
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-700 p-6 rounded-lg">
+                            <div class="flex items-center gap-4 mb-4">
+                                <img src="http://static.photos/people/200x200/1" alt="Alex Johnson" class="w-16 h-16 rounded-full object-cover">
+                                <div>
+                                    <h3 class="text-xl font-bold">Alex Johnson</h3>
+                                    <p class="text-purple-400">Lead Developer</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-300">
+                                Space enthusiast and full-stack developer with a passion for creating interactive educational tools.
+                            </p>
+                        </div>
+                        <div class="bg-gray-700 p-6 rounded-lg">
+                            <div class="flex items-center gap-4 mb-4">
+                                <img src="http://static.photos/people/200x200/2" alt="Sarah Chen" class="w-16 h-16 rounded-full object-cover">
+                                <div>
+                                    <h3 class="text-xl font-bold">Sarah Chen</h3>
+                                    <p class="text-blue-400">UI/UX Designer</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-300">
+                                Designer with a focus on creating immersive space exploration experiences.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="bg-gray-800 rounded-xl p-8 shadow-2xl">
+                    <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                        <i data-feather="mail"></i> Contact Us
+                    </h2>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block mb-2 text-gray-300">Your Name</label>
+                            <input type="text" id="name" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 text-gray-300">Your Email</label>
+                            <input type="email" id="email" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2 text-gray-300">Your Message</label>
+                            <textarea id="message" rows="4" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+                        </div>
+                        <button type="submit" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 rounded-lg transition-all duration-300 font-medium flex items-center gap-2">
+                            <i data-feather="send"></i> Send Message
+                        </button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
