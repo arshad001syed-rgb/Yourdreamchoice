@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISS Tracker | Cosmic Quasar Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <custom-navbar></custom-navbar>
+
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+            International Space Station Tracker
+        </h1>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 bg-gray-800 rounded-xl p-6 shadow-2xl">
+                <div id="map" class="h-96 w-full rounded-lg"></div>
+            </div>
+            
+            <div class="bg-gray-800 rounded-xl p-6 shadow-2xl">
+                <div class="space-y-6">
+                    <h2 class="text-2xl font-bold flex items-center gap-2">
+                        <i data-feather="navigation"></i> ISS Information
+                    </h2>
+                    
+                    <div class="space-y-4">
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Current Location:</span>
+                            <span id="iss-location" class="font-medium">Loading...</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Latitude:</span>
+                            <span id="iss-lat" class="font-medium">-</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Longitude:</span>
+                            <span id="iss-lon" class="font-medium">-</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Altitude:</span>
+                            <span id="iss-alt" class="font-medium">-</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Velocity:</span>
+                            <span id="iss-velocity" class="font-medium">-</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Visibility:</span>
+                            <span id="iss-visibility" class="font-medium">-</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-400">Crew:</span>
+                            <span id="iss-crew" class="font-medium">-</span>
+                        </div>
+                    </div>
+                    
+                    <button id="refresh-btn" class="w-full py-2 bg-purple-600 hover:bg-purple-700 rounded-full transition-all duration-300 flex items-center justify-center gap-2">
+                        <i data-feather="refresh-cw"></i> Refresh Data
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize map
+            const map = L.map('map').setView([0, 0], 2);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                detectRetina: true
+            }).addTo(map);
+            
+            // Create ISS icon
+            const issIcon = L.icon({
+                iconUrl: 'https://cdn-icons-png.flaticon.com/512/2733/2733092.png',
+                iconSize: [50, 50],
+                iconAnchor: [25, 25],
+                popupAnchor: [0, -25]
+            });
+            
+            // Initialize marker
+            const issMarker = L.marker([0, 0], {icon: issIcon}).addTo(map);
+            issMarker.bindPopup("<b>International Space Station</b><br>Current position").openPopup();
+            
+            // First data fetch
+            fetchISSData();
+            
+            // Set up auto-refresh every 5 seconds
+            let refreshInterval = setInterval(fetchISSData, 5000);
+            
+            // Manual refresh button
+            document.getElementById('refresh-btn').addEventListener('click', () => {
+                fetchISSData();
+                clearInterval(refreshInterval);
+                refreshInterval = setInterval(fetchISSData, 5000);
+            });
+            
+            async function fetchISSData() {
+                try {
+                    // Get current ISS position
+                    const positionResponse = await fetch('https://api.wheretheiss.at/v1/satellites/25544');
+                    const positionData = await positionResponse.json();
+                    
+                    // Update map and marker
+                    const {latitude, longitude, altitude, velocity, visibility} = positionData;
+                    map.setView([latitude, longitude], map.getZoom());
+                    issMarker.setLatLng([latitude, longitude]);
+                    
+                    // Update information display
+                    document.getElementById('iss-lat').textContent = latitude.toFixed(4) + '°';
+                    document.getElementById('iss-lon').textContent = longitude.toFixed(4) + '°';
+                    document.getElementById('iss-alt').textContent = Math.round(altitude) + ' km';
+                    document.getElementById('iss-velocity').textContent = Math.round(velocity) + ' km/h';
+                    document.getElementById('iss-visibility').textContent = visibility;
+                    
+                    // Get country information
+                    const countryResponse = await fetch(`https://api.wheretheiss.at/v1/coordinates/${latitude},${longitude}`);
+                    const countryData = await countryResponse.json();
+                    
+                    let locationText = 'Over the ocean';
+                    if (countryData.country_code) {
+                        locationText = `Over ${countryData.country_code === 'US' ? 'the United States' : countryData.name}`;
+                        if (countryData.timezone_id) {
+                            locationText += ` (${countryData.timezone_id.replace(/_/g, ' ')})`;
+                        }
+                    }
+                    document.getElementById('iss-location').textContent = locationText;
+                    
+                    // Get crew information (using different API)
+                    const crewResponse = await fetch('http://api.open-notify.org/astros.json');
+                    const crewData = await crewResponse.json();
+                    const issCrew = crewData.people.filter(person => person.craft === 'ISS');
+                    document.getElementById('iss-crew').textContent = issCrew.length + ' astronauts';
+                    
+                } catch (error) {
+                    console.error('Error fetching ISS data:', error);
+                    document.getElementById('iss-location').textContent = 'Error loading data';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
