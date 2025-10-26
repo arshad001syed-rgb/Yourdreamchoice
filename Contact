@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Stellar Horizon HR Consultancy</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <custom-navbar></custom-navbar>
+
+    <main class="flex-grow container mx-auto px-4 py-12">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
+                Contact Stellar Horizon HR
+            </h1>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-gray-800 rounded-xl p-8 shadow-2xl">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                        <i data-feather="map-pin"></i> Office Locations
+                    </h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="text-lg font-semibold text-blue-400">Hyderabad, India (Headquarters)</h3>
+                            <p class="text-gray-300">Hitech City, Hyderabad, Telangana</p>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-blue-400">International Presence</h3>
+                            <ul class="grid grid-cols-2 gap-2 mt-2">
+                                <li class="flex items-center gap-2"><i data-feather="globe" class="w-4 h-4"></i> UAE (Dubai)</li>
+                                <li class="flex items-center gap-2"><i data-feather="globe" class="w-4 h-4"></i> Singapore</li>
+                                <li class="flex items-center gap-2"><i data-feather="globe" class="w-4 h-4"></i> KSA (Riyadh)</li>
+                                <li class="flex items-center gap-2"><i data-feather="globe" class="w-4 h-4"></i> Oman</li>
+                                <li class="flex items-center gap-2"><i data-feather="globe" class="w-4 h-4"></i> Malta</li>
+                                <li class="flex items-center gap-2"><i data-feather="globe" class="w-4 h-4"></i> Portugal</li>
+                                <li class="flex items-center gap-2"><i data-feather="globe" class="w-4 h-4"></i> Russia</li>
+                                <li class="flex items-center gap-2"><i data-feather="globe" class="w-4 h-4"></i> Europe</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800 rounded-xl p-8 shadow-2xl">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                        <i data-feather="mail"></i> Get In Touch
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-blue-900 bg-opacity-30 rounded-full">
+                                <i data-feather="phone" class="text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">WhatsApp</p>
+                                <a href="https://wa.me/919392564229" class="text-lg font-medium hover:text-blue-400 transition-colors">+91 9392564229</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-blue-900 bg-opacity-30 rounded-full">
+                                <i data-feather="mail" class="text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Email</p>
+                                <a href="mailto:arshad001syed@gmail.com" class="text-lg font-medium hover:text-blue-400 transition-colors">arshad001syed@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-blue-900 bg-opacity-30 rounded-full">
+                                <i data-feather="linkedin" class="text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">LinkedIn</p>
+                                <a href="https://www.linkedin.com/in/syed-arshad-a8a1aa4b" target="_blank" class="text-lg font-medium hover:text-blue-400 transition-colors">Syed Arshad</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-gray-800 rounded-xl p-8 shadow-2xl">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                    <i data-feather="users"></i> Client Registration
+                </h2>
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="client-name" class="block mb-2 text-gray-300">Full Name*</label>
+                            <input type="text" id="client-name" required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="client-dob" class="block mb-2 text-gray-300">Date of Birth*</label>
+                            <input type="date" id="client-dob" required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="client-email" class="block mb-2 text-gray-300">Email*</label>
+                            <input type="email" id="client-email" required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="client-mobile" class="block mb-2 text-gray-300">Mobile Number*</label>
+                            <input type="tel" id="client-mobile" required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="client-country" class="block mb-2 text-gray-300">Target Country*</label>
+                            <select id="client-country" required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select Country</option>
+                                <option value="UAE">United Arab Emirates</option>
+                                <option value="Singapore">Singapore</option>
+                                <option value="KSA">Saudi Arabia</option>
+                                <option value="Oman">Oman</option>
+                                <option value="Malta">Malta</option>
+                                <option value="Portugal">Portugal</option>
+                                <option value="Europe">Other European Countries</option>
+                                <option value="Russia">Russia</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="client-visa" class="block mb-2 text-gray-300">Visa Type*</label>
+                            <select id="client-visa" required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select Visa</option>
+                                <option value="Employment">Employment</option>
+                                <option value="Business">Business</option>
+                                <option value="Investor">Investor</option>
+                                <option value="Student">Student</option>
+                                <option value="Tourist">Tourist</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="client-passport" class="block mb-2 text-gray-300">Passport Upload*</label>
+                            <input type="file" id="client-passport" accept=".pdf,.jpg,.png" required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="client-resume" class="block mb-2 text-gray-300">Resume Upload*</label>
+                            <input type="file" id="client-resume" accept=".pdf,.doc,.docx" required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+                    
+                    <div class="pt-4">
+                        <button type="submit" class="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-500 hover:from-blue-700 hover:to-purple-600 rounded-lg transition-all duration-300 font-medium flex items-center gap-2 w-full justify-center">
+                            <i data-feather="send"></i> Submit Application
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
