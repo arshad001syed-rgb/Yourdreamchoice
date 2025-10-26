@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Clients | Stellar Horizon HR Consultancy</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <custom-navbar></custom-navbar>
+
+    <main class="flex-grow container mx-auto px-4 py-12">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
+                Our Valued Clients
+            </h1>
+            
+            <div class="bg-gray-800 rounded-xl p-8 shadow-2xl overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b border-gray-700">
+                            <th class="py-3 px-4 text-left">Client</th>
+                            <th class="py-3 px-4 text-left">Country</th>
+                            <th class="py-3 px-4 text-left">Visa Type</th>
+                            <th class="py-3 px-4 text-left">Rating</th>
+                            <th class="py-3 px-4 text-left">Testimonial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-700 hover:bg-gray-700">
+                            <td class="py-4 px-4">
+                                <div class="flex items-center gap-3">
+                                    <img src="http://static.photos/people/200x200/3" alt="Rajesh Kumar" class="w-10 h-10 rounded-full object-cover">
+                                    <div>
+                                        <p class="font-medium">Rajesh Kumar</p>
+                                        <p class="text-sm text-gray-400">DOB: 15/08/1985</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="py-4 px-4">UAE</td>
+                            <td class="py-4 px-4">Employment</td>
+                            <td class="py-4 px-4">
+                                <div class="flex items-center gap-1 text-yellow-400">
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                            </td>
+                            <td class="py-4 px-4 text-gray-300">"Excellent service! Got my UAE work visa in just 2 weeks."</td>
+                        </tr>
+                        <tr class="border-b border-gray-700 hover:bg-gray-700">
+                            <td class="py-4 px-4">
+                                <div class="flex items-center gap-3">
+                                    <img src="http://static.photos/people/200x200/4" alt="Priya Sharma" class="w-10 h-10 rounded-full object-cover">
+                                    <div>
+                                        <p class="font-medium">Priya Sharma</p>
+                                        <p class="text-sm text-gray-400">DOB: 22/03/1990</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="py-4 px-4">Singapore</td>
+                            <td class="py-4 px-4">Employment</td>
+                            <td class="py-4 px-4">
+                                <div class="flex items-center gap-1 text-yellow-400">
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4"></i>
+                                </div>
+                            </td>
+                            <td class="py-4 px-4 text-gray-300">"Very professional team. Helped me secure a great job in Singapore."</td>
+                        </tr>
+                        <tr class="border-b border-gray-700 hover:bg-gray-700">
+                            <td class="py-4 px-4">
+                                <div class="flex items-center gap-3">
+                                    <img src="http://static.photos/people/200x200/5" alt="Ali Khan" class="w-10 h-10 rounded-full object-cover">
+                                    <div>
+                                        <p class="font-medium">Ali Khan</p>
+                                        <p class="text-sm text-gray-400">DOB: 10/12/1978</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="py-4 px-4">Portugal</td>
+                            <td class="py-4 px-4">Investor</td>
+                            <td class="py-4 px-4">
+                                <div class="flex items-center gap-1 text-yellow-400">
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                            </td>
+                            <td class="py-4 px-4 text-gray-300">"Golden visa process was smooth and efficient. Highly recommended!"</td>
+                        </tr>
+                        <tr class="border-b border-gray-700 hover:bg-gray-700">
+                            <td class="py-4 px-4">
+                                <div class="flex items-center gap-3">
+                                    <img src="http://static.photos/people/200x200/6" alt="Anjali Patel" class="w-10 h-10 rounded-full object-cover">
+                                    <div>
+                                        <p class="font-medium">Anjali Patel</p>
+                                        <p class="text-sm text-gray-400">DOB: 05/07/1982</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="py-4 px-4">Malta</td>
+                            <td class="py-4 px-4">Business</td>
+                            <td class="py-4 px-4">
+                                <div class="flex items-center gap-1 text-yellow-400">
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4"></i>
+                                </div>
+                            </td>
+                            <td class="py-4 px-4 text-gray-300">"Great support throughout the entire business setup process."</td>
+                        </tr>
+                        <tr class="hover:bg-gray-700">
+                            <td class="py-4 px-4">
+                                <div class="flex items-center gap-3">
+                                    <img src="http://static.photos/people/200x200/7" alt="Michael Johnson" class="w-10 h-10 rounded-full object-cover">
+                                    <div>
+                                        <p class="font-medium">Michael Johnson</p>
+                                        <p class="text-sm text-gray-400">DOB: 18/09/1975</p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="py-4 px-4">Russia</td>
+                            <td class="py-4 px-4">Employment</td>
+                            <td class="py-4 px-4">
+                                <div class="flex items-center gap-1 text-yellow-400">
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                </div>
+                            </td>
+                            <td class="py-4 px-4 text-gray-300">"Exceptional service for my work visa in Moscow. Will use again!"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
